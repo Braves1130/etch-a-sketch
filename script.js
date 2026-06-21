@@ -5,6 +5,9 @@ function createGrid() {
         const square = document.createElement("div");
         square.classList.add("square");
         container.appendChild(square);
+            square.addEventListener("mouseover", () => {
+                square.classList.add("squareChange");
+            });
     }
 }
 
