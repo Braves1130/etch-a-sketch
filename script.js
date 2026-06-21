@@ -16,17 +16,25 @@ if (size >100) {
 
 function createGrid(size) {
     const squareSize = 960 / size;
+   
 
     for (let i = 0; i < size * size ; i++) {
         const square = document.createElement("div");
+        let opacity = "0";
+
         square.classList.add("square");
+        square.style.backgroundColor = "black";
+        square.style.opacity = opacity;
+        
         square.style.width = squareSize + "px";
         square.style.height = squareSize + "px";
         container.appendChild(square);
 
         square.addEventListener("mouseover", () => {
-                square.classList.add("squareChange");
+            opacity += 0.1;
+            square.style.opacity = opacity;
             });
     }
 }
+createGrid(16)
 
